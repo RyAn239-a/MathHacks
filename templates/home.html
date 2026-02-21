@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Probability Visualizations</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Probability Visualizations</h1>
+      <p>Educational site to explore interactive probability simulations</p>
+    </header>
+
+    <section class="card-container">
+      {% for viz in visualizations %}
+      <div class="card">
+        <h2>{{ viz.title }}</h2>
+        <p>{{ viz.description }}</p>
+        <a href="{{ url_for(viz.route) }}" class="btn">Explore</a>
+      </div>
+      {% endfor %}
+    </section>
+
+    <footer>
+      <p>Probability Demos</p>
+    </footer>
+  </body>
+</html>
